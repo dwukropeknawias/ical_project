@@ -5,3 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Student.create!(index: "235000",
+                first_name: "Daniel",
+                last_name: "Nowak",
+                field_of_study: "TIN",
+                password:              "foobar",
+                password_confirmation: "foobar",
+                admin: true)
+
+
+
+99.times do |n|
+
+  if n<9
+    index = "23500#{n+1}"
+  else
+    index = "2350#{n+1}"
+  end
+    first_name = "Machine#{n+1}"
+    last_name = "Robot#{n+1}"
+    field_of_study = "TIN"
+    password = "password"
+    Student.create!(index: index,
+                  first_name: first_name,
+                  last_name: last_name,
+                  field_of_study: field_of_study,
+                  password:              password,
+                  password_confirmation: password)
+end

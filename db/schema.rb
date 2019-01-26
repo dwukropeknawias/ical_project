@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_134249) do
+ActiveRecord::Schema.define(version: 2019_01_26_182100) do
 
   create_table "students", force: :cascade do |t|
     t.string "index"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_01_26_134249) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end

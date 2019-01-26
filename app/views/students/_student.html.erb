@@ -1,0 +1,11 @@
+<li>
+
+
+  <%= link_to student.index, student %>
+
+  <% if current_student.admin? && !current_student?(student) %>
+      | <%= link_to "Delete", student, method: :delete,
+                                    data: { confirm: "Are you sure?" } %>
+    <% end %>
+
+</li>
