@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
 
-  validates :index, presence: true, length: { is: 6 }, uniqueness: true
+  validates :index, presence: true, length: { is: 6 }, uniqueness: true, numericality: { only_integer: true }
 
   validates :first_name, presence: true, length: { maximum: 50 }
 
