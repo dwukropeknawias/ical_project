@@ -9,15 +9,18 @@ class StudentsController < ApplicationController
   end
 
   def create
-      @student = Student.new(student_params)    # Not the final implementation!
+
+      @student = Student.new(student_params)
+
       if @student.save
+        log_in @student
         flash[:success] = "Registration was successfull. Good job."
         redirect_to @student
       else
         render 'new'
       end
 
-    end
+  end
 
   private
 
