@@ -13,6 +13,8 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+
+    @events = @student.events.paginate(page: params[:page])
   end
 
   def new

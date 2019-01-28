@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_182100) do
+ActiveRecord::Schema.define(version: 2019_01_26_223858) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "lecturer"
+    t.string "location"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "index"
@@ -21,6 +31,13 @@ ActiveRecord::Schema.define(version: 2019_01_26_182100) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.boolean "admin", default: false
+  end
+
+  create_table "students_events", id: false, force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "event_id"
+    t.index ["event_id"], name: "index_students_events_on_event_id"
+    t.index ["student_id"], name: "index_students_events_on_student_id"
   end
 
 end

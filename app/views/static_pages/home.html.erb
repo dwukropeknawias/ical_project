@@ -1,3 +1,20 @@
+<% if logged_in? %>
+  <div class="center jumbotron">
+
+      <h1>Welcome to iCal Project</h1>
+
+      <h2>
+
+        You are logged in.
+
+      </h2>
+
+      <%= link_to "Click here to check out your profile!", current_student, class: "btn btn-lg btn-primary" %>
+      </div>
+
+<% else %>
+
+
 <div class="center jumbotron">
 
     <h1>Welcome to iCal Project</h1>
@@ -10,3 +27,5 @@
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
+
+<% end %>

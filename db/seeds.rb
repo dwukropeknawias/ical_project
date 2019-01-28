@@ -10,8 +10,8 @@ Student.create!(index: "235000",
                 first_name: "Daniel",
                 last_name: "Nowak",
                 field_of_study: "TIN",
-                password:              "foobar",
-                password_confirmation: "foobar",
+                password:              "admin1",
+                password_confirmation: "admin1",
                 admin: true)
 
 
@@ -34,3 +34,12 @@ Student.create!(index: "235000",
                   password:              password,
                   password_confirmation: password)
 end
+
+ # students = Student.order(:created_at).take(6)
+
+#60.times do
+#  name = "lsk"
+#  lecturer = "pan"
+#  location = "w4"
+#  students.each { |student| student.events.create!(name: name, lecturer: lecturer, location: location) }
+#end

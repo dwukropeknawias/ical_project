@@ -1,29 +1,65 @@
 <% provide(:title, @student.index) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="student_info">
 
-<h1>
-    Student's info
-</h1>
+        <h1>
+            Student's info
+        </h1>
 
-<p>
+        <p>
 
-  <b>Index:</b> <%= @student.index %>
+          <b>Index:</b> <%= @student.index %>
 
-</p>
+        </p>
 
-<p>
+        <p>
 
-  <b>First name:</b> <%= @student.first_name %>
+          <b>First name:</b> <%= @student.first_name %>
 
-</p>
+        </p>
 
-<p>
+        <p>
 
-  <b>Last name:</b> <%= @student.last_name %>
+          <b>Last name:</b> <%= @student.last_name %>
 
-</p>
+        </p>
 
-<p>
+        <p>
 
-  <b>Field of study:</b> <%= @student.field_of_study %>
+          <b>Field of study:</b> <%= @student.field_of_study %>
 
-</p>
+        </p>
+
+     </section>
+   </aside>
+
+
+
+      <div class="col-md-8">
+
+          <% if @student.events.any? %>
+
+            <h3> Events </h3>
+
+             <%= will_paginate @events %>
+
+            <ol class="events">
+
+              <%= render @events %>
+
+            </ol>
+            
+             <%= will_paginate @events %>
+
+          <% end %>
+
+
+
+
+
+
+      </div>
+
+
+  </div>

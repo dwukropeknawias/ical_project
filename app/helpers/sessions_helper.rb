@@ -5,7 +5,7 @@ module SessionsHelper
   end
 
 
-  # True if student is the current student
+  
   def current_student?(student)
     student == current_student
   end
