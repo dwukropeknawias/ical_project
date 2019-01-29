@@ -13,9 +13,10 @@ class EventsController < ApplicationController
 
 
 
-      @event_file = File.open("calendar2.ics")
+      @event_file = File.open("calendar.ics")
       @events = Icalendar::Event.parse(@event_file)
 
+      current_student.events = []
       @events.each do |event|
 
         hash = Digest::MD5.hexdigest(event.summary + event.location + event.description + event.dtstart.to_s + event.dtend.to_s)
@@ -24,7 +25,7 @@ class EventsController < ApplicationController
 
           findhash = Event.where(MD5_digest: hash)
 
-          current_student.events = findhash
+          current_student.events.append(findhash)
 
         else
 
