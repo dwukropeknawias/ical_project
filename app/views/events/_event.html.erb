@@ -6,8 +6,12 @@
 
   <span class="content">
     <p>
+      <%= link_to "Event info", event %>
+    </p>
+    <p>
       <b>Event Name:</b> <%= event.name %>
     </p>
+
 
     <p>
       <b>Lecturer Name:</b> <%= event.lecturer %>
@@ -25,6 +29,9 @@
       <b>End Time:</b> <%= event.end_time %>
     </p>
 
+    <p>
+      <b>Digest:</b> <%= event.MD5_digest %>
+    </p>
 
   </span>
 

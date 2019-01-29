@@ -1,0 +1,63 @@
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="student_info">
+
+        <h1>
+            Event info
+        </h1>
+
+
+
+          <p>
+            <b>Event Name:</b> <%= @event.name %>
+          </p>
+
+
+          <p>
+            <b>Lecturer Name:</b> <%= @event.lecturer %>
+          </p>
+
+          <p>
+            <b>Location</b> <%= @event.location %>
+          </p>
+
+          <p>
+            <b>Start Time:</b>  <%= @event.start_time %>
+          </p>
+
+          <p>
+            <b>End Time:</b> <%= @event.end_time %>
+          </p>
+
+          <p>
+            <b>Digest:</b> <%= @event.MD5_digest %>
+          </p>
+
+          <%= link_to "Back to students", students_path, class: "btn btn-lg btn-primary" %>
+
+     </section>
+   </aside>
+
+   <div class="col-md-8">
+
+       <% if @event.students.any? %>
+
+         <h3> Students </h3>
+
+          <%= will_paginate @students %>
+
+         <ol class="events">
+
+           <%= render @students %>
+
+         </ol>
+
+          <%= will_paginate @students %>
+
+       <% end %>
+
+       </div>
+
+
+</div>
